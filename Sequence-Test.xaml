@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence_Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="944,1288" sap2010:WorkflowViewState.IdRef="Sequence_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence_Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="944,1070" sap2010:WorkflowViewState.IdRef="Sequence_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -91,19 +91,19 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence_Test" sap:VirtualizedContainerService.HintSize="644,1223" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence_Test" sap:VirtualizedContainerService.HintSize="608,1005" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="582,1112" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Data\Input\RAW DATA RECEIVED FROM CUSTOMER - TCHFL.xlsb">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="546,894" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Data\Input\RAW DATA RECEIVED FROM CUSTOMER - TCHFL.xlsb">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,1002" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,784" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_input" />
               <Variable x:TypeArguments="sd:DataTable" Name="dt_filtered" />
@@ -113,7 +113,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Excel PopUp - Sequence" sap:VirtualizedContainerService.HintSize="486,81" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Excel PopUp - Sequence" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="ExcelPopup" />
               </Sequence.Variables>
@@ -197,14 +197,14 @@
                 </If.Else>
               </If>
             </Sequence>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_input]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="486,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_input]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="450,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <Assign DisplayName="Assign - Get single column data" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Assign - Get single column data" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[dt_filtered]</OutArgument>
               </Assign.To>
@@ -212,25 +212,25 @@
                 <InArgument x:TypeArguments="sd:DataTable">[dt_input.DefaultView.ToTable(False, dt_input.Columns("BRANCH_NAME2").ToString)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,270" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,191" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,191" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:RemoveDuplicateRows DataTable="[dt_filtered]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dt_filtered]" />
+                  <ui:RemoveDuplicateRows DataTable="[dt_filtered]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[dt_filtered]" />
                 </Sequence>
               </ui:CommentOut.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Assign DisplayName="Assign - Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Assign - Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[dt_filtered]</OutArgument>
               </Assign.To>
@@ -238,7 +238,7 @@
                 <InArgument x:TypeArguments="sd:DataTable">[dt_filtered.DefaultView.ToTable(True)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:WriteRange AddHeaders="True" DataTable="[dt_filtered]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="486,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Data\Input\Sample OP.xlsx" />
+            <ui:WriteRange AddHeaders="True" DataTable="[dt_filtered]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Data\Input\Sample OP.xlsx" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
